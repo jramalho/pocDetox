@@ -1,0 +1,21 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "configurations": {
+    "ios.sim.debug": {
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/pocdetox.app",
+      "build": "xcodebuild -workspace ios/pocdetox.xcworkspace -scheme pocdetox -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 8"
+      }
+    },
+    "android": {
+      "type": "android.emulator",
+      "binaryPath": "android/app/build/outputs",
+      "device": {
+        "avdName": "Pixel_2_API_29"
+      }
+    }
+  }
+}
