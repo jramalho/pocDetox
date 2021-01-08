@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,6 +15,7 @@ import {
   Text,
   StatusBar,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -22,6 +23,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
+  const [apertei, setApertei] = useState(false);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -39,6 +42,14 @@ const App = () => {
                 style={{width: 200, height: 200}}
               />
             </View>
+            <TouchableOpacity 
+              onPress={() => setApertei(true)}
+              testID='apertei'
+              style={{
+                width: 50, height: 50, borderRadius: 20, backgroundColor: 'brown',
+              }}
+            />
+            {apertei && <View testID='purpo' style={{ height: 30, width: 30, backgroundColor: 'purple' }}/>}
         </ScrollView>
       </SafeAreaView>
     </>
